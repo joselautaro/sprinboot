@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar contacto</title>
+    <style>
+        body{
+            background-color: #8d7373;
+            color: #fff;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            margin: auto;
+            width: 50%;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        label{
+            display: block;
+        }
+        input{
+            width: 100%;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .checkbox{
+            float: left;
+        }
+        button{
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: transparent;
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Agregar nuevo contacto</h1>
+    <form action="/agenda/guardar" method="post">
+        <div>
+            <label>Nombre:</label>
+            <input type="text" name="nombre" th:value="${contacto.nombre}">
+        </div>
+        <div>
+            <label>Teléfono:</label>
+            <input type="number" name="telefono" th:value="${contacto.telefono}">
+        </div>
+        <div>
+            <label>Email:</label>
+            <input type="email" name="email" th:value="${contacto.email}">
+        </div>
+        <div>
+            <label>Favorito:</label>
+            <input class="checkbox" type="checkbox" name="checkbox" th:value="${contacto.Favorito}">
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+
+</body>
+
+</html>
