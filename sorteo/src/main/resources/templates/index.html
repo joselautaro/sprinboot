@@ -1,12 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gran Sorteo - Anual</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .cover-container{
+            max-width: 42em;
+            margin: auto;
+            padding: 20px;
+        }
+        header{
+            margin-bottom: auto;
+        }
+        h3{
+            margin-bottom: 20px;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav a{
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 8px;
+            border-bottom: 2px solid transparent;
+        }
+        nav a:hover,
+        .active{
+            color: white;
+            border-bottom-color: white;
+        }
+        main{
+            padding: 20px;
+        }
+        .lead{
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .btn{
+            display: inline-block;
+            padding:  10px 20px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid white;
+            border-radius: 5px;
+        }
+        .btn:hover{
+            background-color: transparent;
+            color: white;
+        }
+        .iphone,
+        .apple{
+            width: 25%;
+            position: absolute;
+        }
+        .iphone{
+            left: 1%;
+            transform: rotate(-10deg);
+        }
+        .apple{
+            margin: 25px;
+            right: 5%;
+            transform: rotate(10deg);
+        }
+        footer{
+            margin-top: auto;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
 </head>
+
 <body>
-    <h1>¡Gran Sorteo!</h1>
-    
+    <div class="cover-container">
+        <header>
+            <nav>
+                <a class="active" href="#">Home</a>
+                <a href="/personas">Lista de participantes</a>
+                <a href="/personas/nuevo">Registrarme</a>
+            </nav>
+        </header>
+        <main>
+            <img class="iphone"
+                src="https://storage.googleapis.com/alpine-inkwell-325917.appspot.com/devices/ipad-mini-6-header.png"
+                alt="ipad-mini-header">
+            <h1>
+                ¡Gran Sorteo!
+            </h1>
+            <p class="lead">
+                Registrate y participá por estos increibles premios valorizados por más de USD1.500M ¡Inscribite
+                ya!
+            </p>
+            <div>
+                <a href="/personas/nuevo" class="btn">Registrarme</a>
+            </div>
+            <img class="apple" src="https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP877/apple-watch-se-2nd-gen.png" alt="apple-touch-icon">
+        </main>
+        <footer>
+            <p>Desarrollada por AA.RR <strong>Todos los derechos reservados</strong><code>2024</code></p>
+        </footer>
+    </div>
 </body>
+
 </html>
