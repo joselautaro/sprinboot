@@ -121,18 +121,18 @@
         <h4>¡Ingresá tus datos y participá!</h4>
         <form action="/personas" method="post">
             <label class="form-label">Nombre:</label>
-            <input type="text" name="nombre" class="form-control" required>
+            <input th:value="${persona.nombre}" type="text" name="nombre" class="form-control" required>
             <label class="form-label">Apellido:</label>
-            <input type="text" name="apellido" class="form-control" required>
+            <input th:value="${persona.apellido}" type="text" name="apellido" class="form-control" required>
             <label class="form-label">Email:</label>
-            <input type="email" name="email" class="form-control" required>
+            <input th:value="${persona.email}" type="email" name="email" class="form-control" required>
             <label class="form-label">Teléfono:</label>
-            <input type="number" name="telefono" class="form-control" required>
+            <input th:value="${persona.telefono}" type="number" name="telefono" class="form-control" required>
             <label class="form-label">Dirección:</label>
-            <input type="text" name="direccion" class="form-control" required>
+            <input th:value="${persona.direccion}" type="text" name="direccion" class="form-control" required>
+            <br>
+            <button type="submit" class="btn">Registrar</button>
         </form>
-        <br>
-        <button type="submit" class="btn">Registrar</button>
     </div>
     <footer>
         <p> &copy;2017-2025 Gran Sorteo LLC </p>

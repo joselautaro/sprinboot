@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de participantes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navega {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .navega a {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .navega a:hover, .active {
+            border-bottom-color: white;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #333;
+            color: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #444;
+            text-align: left;
+        }
+
+        th {
+            background-color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .btn-danger {
+            background-color: red;
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>Gran Sorteo</h3>
+        <nav class="navega">
+            <a href="/">Home</a>
+            <a class="active" href="/personas">Lista de participantes</a>
+            <a href="/personas/nuevo">Registrarme</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Lista de participantes</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="personas : ${personas}">
+                        <td th:text="${personas.id}"></td>
+                        <td th:text="${personas.nombre}"></td>
+                        <td th:text="${personas.apellido}"></td>
+                        <td th:text="${personas.email}"></td>
+                        <td th:text="${personas.telefono}"></td>
+                        <td th:text="${personas.direccion}"></td>
+                        <td>
+                            <a class="btn btn-outline-info" th:href="@{/personas/editar/{id}(id=${personas.id})}">Editar</a>
+                            <a class="btn btn-danger" th:href="@{/personas/eliminar/{id}(id=${personas.id})}">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
