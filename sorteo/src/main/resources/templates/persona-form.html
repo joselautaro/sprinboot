@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navega {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .navega a {
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .navega a:hover, .active {
+            border-bottom-color: white;
+        }
+
+        .lead {
+            font-size: 1.2em;
+        }
+
+        .list-group {
+            list-style: none;
+            padding: 0;
+        }
+
+        .list-group-item {
+            background: #444;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        .form-label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: white;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        footer {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #333;
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h3>Gran Sorteo</h3>
+        <nav class="navega">
+            <a href="/">Home</a>
+            <a href="/personas">Lista de participantes</a>
+            <a class="active" href="/personas/nuevo">Registrarme</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>¡Registrate y ganá!</h2>
+        <h4>Premios a ganar</h4>
+        <ul class="list-group">
+            <li class="list-group-item">Play Station 5 - usd/4000</li>
+            <li class="list-group-item">Iphone 14 PRO - usd/2900</li>
+            <li class="list-group-item">Ipad Air 5 - usd/2000</li>
+            <li class="list-group-item">YAPE de - usd/1.500</li>
+            <li class="list-group-item">Más de <strong>usd1.5M</strong> en juego</li>
+        </ul>
+
+        <h4>¡Ingresá tus datos y participá!</h4>
+        <form action="/personas" method="post">
+            <label class="form-label">Nombre:</label>
+            <input type="text" class="form-control">
+            <label class="form-label">Apellido:</label>
+            <input type="text" class="form-control">
+            <label class="form-label">Email:</label>
+            <input type="email" class="form-control">
+            <label class="form-label">Teléfono:</label>
+            <input type="number" class="form-control">
+            <label class="form-label">Dirección:</label>
+            <input type="text" class="form-control">
+        </form>
+        <br>
+        <button type="submit" class="btn">Registrar</button>
+    </div>
+    <footer>
+        <p> &copy;2017-2025 Gran Sorteo LLC </p>
+    </footer>
+</body>
+
+</html>
